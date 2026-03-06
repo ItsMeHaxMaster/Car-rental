@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="hu">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>DriveNow Autókölcsönző</title>
+        <meta
+            name="description"
+            content="DriveNow - Autókölcsönző. Béreld ki a számodra legmegfelelőbb autót gyorsan és egyszerűen."
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- Header / Navigation -->
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="#home" class="logo" aria-label="DriveNow - Kezdőlap">
+                    <img
+                        src="kepek/logo.png"
+                        alt="DriveNow logo"
+                        class="logo-img"
+                    />
+                    <div class="logo-text">
+                        <span class="logo-main">DriveNow</span>
+                        <span class="logo-sub">Autókölcsönző</span>
+                    </div>
+                </a>
+
+                <nav id="main-nav" class="main-nav" aria-label="Fő navigáció">
+                    <ul>
+                        <li><a href="#home">Kezdőlap</a></li>
+                        <li><a href="#cars">Autók</a></li>
+                        <li><a href="#services">Szolgáltatások</a></li>
+                        <li><a href="#contact">Kapcsolat</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <a class="btn btn-primary" href="#cars">Autófoglalás</a>
+                    <button
+                        class="nav-toggle"
+                        aria-expanded="false"
+                        aria-controls="main-nav"
+                    >
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero / Banner -->
+        <section id="home" class="banner" role="region" aria-label="Fő banner">
+            <div class="banner-inner">
+                <div class="banner-content">
+                    <h1 class="banner-title">Your Journey, Our Cars</h1>
+                    <p class="banner-text">
+                        Kényelmes, megbízható autók rövid és hosszú távú
+                        bérléséhez. Válassz a széles flottánkból és foglalj
+                        online percek alatt.
+                    </p>
+                    <a class="btn btn-cta" href="#cars">Böngészd az autókat</a>
+                </div>
+                <!-- Background image is set via CSS (style.css), but keep an <img> for progressive enhancement -->
+                <img
+                    class="banner-image"
+                    src="kepek/banner.jpg"
+                    alt="Autók a naplementében"
+                />
+            </div>
+        </section>
+
+        <main>
+            <!-- Cars section -->
+            <section id="cars" class="cars-section">
+                <div class="container">
+                    <h2 class="section-title">Autóink</h2>
+                    <p class="section-intro">
+                        Találd meg a számodra megfelelő modellt — városi
+                        kisautóktól a családi és prémium SUV-okig.
+                    </p>
+
+                    <div class="cars-grid" role="list">
+                        <!-- Car card 1 -->
+                        <article class="car-card" role="listitem">
+                            <div class="car-media">
+                                <img src="kepek/car1.jpg" alt="Tesla Model 3" />
+                            </div>
+                            <div class="car-body">
+                                <p class="car-brand">TESLA</p>
+                                <h3 class="car-name">Model 3</h3>
+                                <p class="car-desc">
+                                    Elektromos szedán, modern funkciókkal és
+                                    kényelmes belsővel.
+                                </p>
+                                <div class="car-footer">
+                                    <span class="price"
+                                        >Napi díj:
+                                        <strong>45 000 Ft</strong></span
+                                    >
+                                    <a class="btn btn-book" href="#contact"
+                                        >Foglalás</a
+                                    >
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Car card 2 -->
+                        <article class="car-card" role="listitem">
+                            <div class="car-media">
+                                <img
+                                    src="kepek/car2.jpg"
+                                    alt="Volkswagen Golf 8"
+                                />
+                            </div>
+                            <div class="car-body">
+                                <p class="car-brand">VOLKSWAGEN</p>
+                                <h3 class="car-name">Golf 8</h3>
+                                <p class="car-desc">
+                                    Kényelmes kompakt, gazdaságos
+                                    üzemanyag-fogyasztással.
+                                </p>
+                                <div class="car-footer">
+                                    <span class="price"
+                                        >Napi díj:
+                                        <strong>18 000 Ft</strong></span
+                                    >
+                                    <a class="btn btn-book" href="#contact"
+                                        >Foglalás</a
+                                    >
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Car card 3 -->
+                        <article class="car-card" role="listitem">
+                            <div class="car-media">
+                                <img
+                                    src="kepek/car3.jpg"
+                                    alt="Toyota Corolla"
+                                />
+                            </div>
+                            <div class="car-body">
+                                <p class="car-brand">TOYOTA</p>
+                                <h3 class="car-name">Corolla</h3>
+                                <p class="car-desc">
+                                    Megbízható, takarékos autó városi és
+                                    országúti használathoz.
+                                </p>
+                                <div class="car-footer">
+                                    <span class="price"
+                                        >Napi díj:
+                                        <strong>22 000 Ft</strong></span
+                                    >
+                                    <a class="btn btn-book" href="#contact"
+                                        >Foglalás</a
+                                    >
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Car card 4 -->
+                        <article class="car-card" role="listitem">
+                            <div class="car-media">
+                                <img src="kepek/car4.jpg" alt="Ford Transit" />
+                            </div>
+                            <div class="car-body">
+                                <p class="car-brand">FORD</p>
+                                <h3 class="car-name">Transit</h3>
+                                <p class="car-desc">
+                                    Nagy teherbírású furgon — ideális
+                                    szállításhoz és munkához.
+                                </p>
+                                <div class="car-footer">
+                                    <span class="price"
+                                        >Napi díj:
+                                        <strong>35 000 Ft</strong></span
+                                    >
+                                    <a class="btn btn-book" href="#contact"
+                                        >Foglalás</a
+                                    >
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Car card 5 -->
+                        <article class="car-card" role="listitem">
+                            <div class="car-media">
+                                <img src="kepek/car5.jpg" alt="BMW X5" />
+                            </div>
+                            <div class="car-body">
+                                <p class="car-brand">BMW</p>
+                                <h3 class="car-name">X5</h3>
+                                <p class="car-desc">
+                                    Prémium SUV kényelmes belsővel és erős
+                                    motorral.
+                                </p>
+                                <div class="car-footer">
+                                    <span class="price"
+                                        >Napi díj:
+                                        <strong>40 000 Ft</strong></span
+                                    >
+                                    <a class="btn btn-book" href="#contact"
+                                        >Foglalás</a
+                                    >
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Car card 6 -->
+                        <article class="car-card" role="listitem">
+                            <div class="car-media">
+                                <img src="kepek/car6.jpg" alt="Fiat 500e" />
+                            </div>
+                            <div class="car-body">
+                                <p class="car-brand">FIAT</p>
+                                <h3 class="car-name">500e</h3>
+                                <p class="car-desc">
+                                    Kompakt elektromos városi autó könnyű
+                                    parkolással.
+                                </p>
+                                <div class="car-footer">
+                                    <span class="price"
+                                        >Napi díj:
+                                        <strong>15 000 Ft</strong></span
+                                    >
+                                    <a class="btn btn-book" href="#contact"
+                                        >Foglalás</a
+                                    >
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services section -->
+            <section id="services" class="services-section">
+                <div class="container">
+                    <h2 class="section-title">Szolgáltatásaink</h2>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon" aria-hidden="true">
+                                🕘
+                            </div>
+                            <h3>24/7 ügyfélszolgálat</h3>
+                            <p>
+                                Éjjel-nappal elérhető ügyfélszolgálat, hogy
+                                bármikor segítsünk.
+                            </p>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon" aria-hidden="true">
+                                🛡️
+                            </div>
+                            <h3>Teljes biztosítás</h3>
+                            <p>
+                                Rugalmas biztosítási csomagok minden bérléshez a
+                                nyugodt utazáshoz.
+                            </p>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon" aria-hidden="true">
+                                ⚡
+                            </div>
+                            <h3>Gyors átvétel</h3>
+                            <p>
+                                Gyors és egyszerű átvétel irodáinkban vagy
+                                kijelölt átvételi pontokon.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact section -->
+            <section id="contact" class="contact-section">
+                <div class="container">
+                    <h2 class="section-title">Kapcsolat és Foglalás</h2>
+                    <p class="section-intro">
+                        Írj nekünk vagy hívd ügyfélszolgálatunkat a gyors
+                        foglaláshoz.
+                    </p>
+
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon" aria-hidden="true">
+                                ✉️
+                            </div>
+                            <h4>Email</h4>
+                            <p>
+                                <a href="mailto:info@drivenow.hu"
+                                    >info@drivenow.hu</a
+                                >
+                            </p>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon" aria-hidden="true">
+                                📞
+                            </div>
+                            <h4>Telefon</h4>
+                            <p><a href="tel:+3612345678">+36 1 234 5678</a></p>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon" aria-hidden="true">
+                                📍
+                            </div>
+                            <h4>Cím</h4>
+                            <p>Budapest, Autó utca 12.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <div class="footer-left">
+                    <strong>DriveNow Autókölcsönző</strong>
+                    <p>
+                        <a href="mailto:info@drivenow.hu">info@drivenow.hu</a> ·
+                        <a href="tel:+3612345678">+36 1 234 5678</a>
+                    </p>
+                </div>
+                <div class="footer-right">
+                    <p>
+                        © <span id="year">2025</span> DriveNow. Minden jog
+                        fenntartva.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Small script to set current year
+            (function () {
+                var el = document.getElementById("year");
+                if (el) el.textContent = new Date().getFullYear();
+
+                // Simple nav toggle for small screens (CSS will hide/show nav)
+                var toggle = document.querySelector(".nav-toggle");
+                var nav = document.querySelector(".main-nav ul");
+                if (toggle && nav) {
+                    toggle.addEventListener("click", function () {
+                        var expanded =
+                            this.getAttribute("aria-expanded") === "true";
+                        this.setAttribute("aria-expanded", String(!expanded));
+                        nav.classList.toggle("open");
+                    });
+                }
+            })();
+        </script>
+    </body>
+</html>

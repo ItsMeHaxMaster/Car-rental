@@ -1,0 +1,599 @@
+/* VizsgaGyak/AutoKolcsonzo/style.css
+   Dark theme inspired by the provided screenshot:
+   - dark header
+   - centered narrow content area
+   - dark cards with teal accents
+   - button hover glow
+   - responsive grid and stacked menu under 768px
+*/
+
+/* Variables */
+:root {
+    --bg: #0d0f10; /* page background */
+    --surface: #161718; /* main surface / panel */
+    --card-bg: #121314; /* card background */
+    --card-panel: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.02),
+        rgba(0, 0, 0, 0.06)
+    );
+    --muted: #9aa3a8; /* subdued text */
+    --text: #e6eef1; /* primary text */
+    --accent: #00d0e0; /* teal accent */
+    --accent-strong: #00b6c7;
+    --glass: rgba(255, 255, 255, 0.02);
+    --shadow-1: 0 6px 18px rgba(0, 0, 0, 0.6);
+    --shadow-2: 0 18px 40px rgba(0, 0, 0, 0.7);
+    --radius: 12px;
+    --container-width: 1000px;
+    --gap: 28px;
+    --transition-fast: 180ms cubic-bezier(0.2, 0.9, 0.2, 1);
+    font-size: 16px;
+}
+
+/* Base */
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, var(--bg), #0b0c0d);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.45;
+}
+
+/* Narrow centered page container */
+.container {
+    width: 92%;
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header */
+.site-header {
+    background: #0b0b0c;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.02) inset;
+    position: sticky;
+    top: 0;
+    z-index: 1200;
+}
+.header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 18px 0;
+}
+.logo {
+    justify-self: start;
+    text-decoration: none;
+    color: var(--text);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.logo-img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
+    flex-shrink: 0;
+}
+.logo-main {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #f4fbfd;
+    font-size: 1.1rem;
+}
+.logo-sub {
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin-top: 2px;
+}
+
+/* Centered nav */
+.main-nav {
+    justify-self: center;
+}
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+.main-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+.main-nav a:hover,
+.main-nav a:focus {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* CTA on the right */
+.header-inner > .btn-primary,
+.header-inner .btn-primary {
+    justify-self: end;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--text);
+}
+.btn-primary {
+    background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+    color: #021115;
+    padding: 10px 16px;
+    box-shadow: 0 6px 20px rgba(0, 192, 205, 0.18);
+    border-radius: 10px;
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease;
+}
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(0, 192, 205, 0.22);
+}
+.nav-toggle {
+    display: none; /* visible on small screens via media query below */
+    background: transparent;
+    border: 0;
+    color: var(--muted);
+    font-size: 1.2rem;
+}
+
+/* Banner */
+.banner {
+    margin-top: 18px;
+    width: 92%;
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(0, 0, 0, 0.12) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: var(--shadow-2);
+    min-height: 340px;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+}
+
+.banner-inner {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    min-height: 340px;
+}
+
+/* Banner content - left side */
+.banner-content {
+    flex: 1 1 0;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        rgba(13, 15, 16, 0.92) 60%,
+        rgba(13, 15, 16, 0) 100%
+    );
+}
+
+/* Banner image - right side */
+.banner-image {
+    flex: 0 0 50%;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+}
+
+/* On medium screens shrink image */
+@media (max-width: 900px) {
+    .banner {
+        min-height: 280px;
+    }
+    .banner-inner {
+        min-height: 280px;
+    }
+    .banner-image {
+        flex: 0 0 42%;
+        width: 42%;
+    }
+    .banner-content {
+        padding: 36px 28px;
+    }
+}
+
+/* On small screens stack vertically */
+@media (max-width: 600px) {
+    .banner {
+        min-height: unset;
+        border-radius: 10px;
+    }
+    .banner-inner {
+        flex-direction: column;
+        min-height: unset;
+    }
+    .banner-image {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 200px;
+        order: -1;
+    }
+    .banner-content {
+        padding: 24px 20px;
+        background: transparent;
+        flex: 1;
+    }
+}
+
+.banner-title {
+    margin: 0 0 12px 0;
+    font-size: 2.2rem;
+    color: var(--text);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+.banner-text {
+    margin: 0 0 22px 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 380px;
+}
+
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 22px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+    color: #021115;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(0, 192, 205, 0.22);
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease;
+    align-self: flex-start;
+}
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(0, 192, 205, 0.3);
+}
+
+/* Main layout spacing - center content like screenshot (wide negative gutters) */
+main {
+    margin-top: 28px;
+    margin-bottom: 48px;
+    display: block;
+}
+
+/* SECTION TITLES */
+.section-title {
+    font-size: 1.15rem;
+    margin: 0 0 6px 0;
+    color: var(--text);
+    font-weight: 700;
+}
+.section-intro {
+    margin: 0 0 18px 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* Cars grid - more gap and columns like screenshot */
+.cars-section {
+    margin-top: 28px;
+}
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    align-items: start;
+    margin-top: 6px;
+}
+
+/* Card */
+.car-card {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.01),
+        rgba(0, 0, 0, 0.06)
+    );
+    border-radius: 12px;
+    overflow: visible;
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.7),
+        0 1px 0 rgba(255, 255, 255, 0.02) inset;
+    display: flex;
+    flex-direction: column;
+    transition:
+        transform 260ms cubic-bezier(0.2, 0.9, 0.2, 1),
+        box-shadow 260ms;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    position: relative;
+}
+
+/* Top image area with a subtle inset/dark frame */
+.car-media {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.01),
+        rgba(0, 0, 0, 0.08)
+    );
+    padding: 18px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.car-media img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 420ms cubic-bezier(0.2, 0.9, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), transparent);
+}
+.car-card:hover .car-media img {
+    transform: scale(1.03);
+}
+
+/* card content */
+.car-body {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 120px;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.03),
+        rgba(0, 0, 0, 0.06)
+    );
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.car-brand {
+    font-size: 0.72rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+.car-name {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--text);
+    font-weight: 700;
+}
+.car-desc {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+/* Footer inside card */
+.car-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+}
+.price {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+.price strong {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+/* book button style matches screenshot: dark inner, teal outline */
+.btn-book {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 208, 224, 0.14);
+    background: rgba(0, 0, 0, 0.18);
+    color: var(--text);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.6px;
+    transition: all 220ms ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+.btn-book:hover {
+    border-color: var(--accent);
+    box-shadow: 0 12px 36px rgba(0, 208, 224, 0.12);
+    transform: translateY(-3px);
+    background: linear-gradient(
+        180deg,
+        rgba(0, 208, 224, 0.02),
+        rgba(0, 0, 0, 0.2)
+    );
+    color: #e9fbff;
+}
+
+/* Services / small cards */
+.services-section {
+    margin-top: 28px;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    margin-top: 6px;
+}
+.service-card {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.01),
+        rgba(0, 0, 0, 0.06)
+    );
+    padding: 14px;
+    border-radius: 12px;
+    color: var(--muted);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+.service-icon {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    color: var(--accent);
+}
+
+/* Contact grid */
+.contact-section {
+    margin-top: 28px;
+}
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    margin-top: 12px;
+}
+.contact-card {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.01),
+        rgba(0, 0, 0, 0.06)
+    );
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    color: var(--muted);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Footer */
+.site-footer {
+    margin-top: 28px;
+    padding: 22px 0;
+    color: var(--muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* Responsive rules */
+@media (max-width: 1100px) {
+    :root {
+        --container-width: 920px;
+        --gap: 22px;
+    }
+    .cars-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .services-grid,
+    .contact-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 900px) {
+    .cars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    /* stacked header: logo / nav / cta */
+    .header-inner {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+    .main-nav {
+        grid-column: 1 / -1;
+        justify-self: start;
+        width: 100%;
+    }
+    .main-nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: transparent;
+        margin-top: 8px;
+    }
+    .main-nav ul.open {
+        display: flex;
+    }
+    .nav-toggle {
+        display: inline-block;
+        justify-self: end;
+    }
+    .logo-sub {
+        display: none;
+    }
+    .cars-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Extra small */
+@media (max-width: 420px) {
+    .car-media img {
+        height: 150px;
+    }
+    .car-body {
+        padding: 12px;
+    }
+    .btn-primary {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
+}
